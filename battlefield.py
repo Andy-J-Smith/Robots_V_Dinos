@@ -36,16 +36,12 @@ class Battlefield:
         while i < length:
             self.robot_turn()
             i += 1
+            
         length = len(self.herd.dinosaurs_list)
         j = 0
         while j < length:
-            self.dino_turn()
+            self.dino_turn() # make a while loop, while the length of both list is greater than 0: should loop over dino and robo turns over and over
             j += 1
-  
-
-                # make a while loop, while the length of both list is greater than 0: should loop over dino and robo turns over and over
-          #not callable
-      
             
         
     def dino_turn(self):
@@ -53,16 +49,17 @@ class Battlefield:
         self.show_dino_options()
         user_dino_choice = int(input())
         self.herd.dinosaurs_list[user_dino_choice].dino_atk(self.fleet.robot_list[1])
-       
+        if self.fleet.robot_list[1].health <= 0:
+           self.fleet.robot_list.remove(self.fleet.robot_list[1])
 
     def robot_turn(self):
         print("select a robot to attack with ")
         self.show_robot_options()
         user_robot_choice = int(input())
         self.fleet.robot_list[user_robot_choice].robot_attack(self.herd.dinosaurs_list[1])
-        # if self.herd.dinosair_list[1].health <= 0:
-           # self.herd.dinosaurs_list.remove(self.herd.dinosaurs_list[1])
-        pass
+        if self.herd.dinosaurs_list[1].health <= 0:
+           self.herd.dinosaurs_list.remove(self.herd.dinosaurs_list[1])
+        
 
     def show_dino_options(self):
         count = 0
