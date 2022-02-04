@@ -1,3 +1,5 @@
+
+from select import select
 from fleet import Fleet
 from herd import Herd
 
@@ -10,21 +12,32 @@ class Battlefield:
         
 
     def run_game(self):
-        self.display_welcome()
+
+        self.game_over = False
+        self.round = 0
+        
 
     
     def display_welcome(self):
-        pass
+        print("******Welcome to Robots versus Dinosaurs******")
+        print("Who will win? The HERD or The FLEET")
+        print("Lets Get it On!")
 
     def battle(self):
-        self.dino_turn()   #add conditionals into function
-        self.robot_turn()
+        self.fleet.robot_list[0].robot_attack(self.herd.dinosaurs_list[1])
+        self.herd.dinosaurs_list[0].dino_atk(self.fleet.robot_list[1])
+
 
     def dino_turn(self, dinosaur):
-        pass
+        self.herd.dinosaurs_list[1]
+        self.herd.dinosaurs_list[0]
+        self.herd.dinosaurs_list[2]
 
     def robot_turn(self, robot):
-        pass
+        self.fleet.robot_list[1]
+        self.fleet.robot_list[0]
+        self.fleet.robot_list[2]
+        print(self.fleet.robot_list[1])
 
     def show_dino_opponent_options(self):
         pass
@@ -34,4 +47,5 @@ class Battlefield:
 
     def display_winners(self):
         pass
-    
+
+
