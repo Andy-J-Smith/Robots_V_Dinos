@@ -1,3 +1,6 @@
+
+
+
 from weapon import Weapon
 
 
@@ -10,6 +13,6 @@ class Robot:
 
 
     def robot_attack(self, dinosaur):
-        dinosaur.health -= self.weapon
-        print("Dinosaur loses 1 health")
+        dinosaur.health -= self.weapon.power
+        print(f'{dinosaur.name} is being attacked by {self.name} with a {self.weapon.name} for {self.weapon.power} damage, leaving {dinosaur.name} with {dinosaur.health} health reamining')
 

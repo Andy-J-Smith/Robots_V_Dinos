@@ -12,9 +12,9 @@ class Battlefield:
         
 
     def run_game(self):
-
-        self.game_over = False
-        self.round = 0
+        self.display_welcome()
+        self.robot_turn()
+        pass
         
 
     
@@ -24,28 +24,35 @@ class Battlefield:
         print("Lets Get it On!")
 
     def battle(self):
-        self.fleet.robot_list[0].robot_attack(self.herd.dinosaurs_list[1])
+        
+            
         self.herd.dinosaurs_list[0].dino_atk(self.fleet.robot_list[1])
 
 
-    def dino_turn(self, dinosaur):
-        self.herd.dinosaurs_list[1]
-        self.herd.dinosaurs_list[0]
-        self.herd.dinosaurs_list[2]
+    def dino_turn(self):
+        self.herd.dinosaurs_list[1].health -= 1
+       
 
-    def robot_turn(self, robot):
-        self.fleet.robot_list[1]
-        self.fleet.robot_list[0]
-        self.fleet.robot_list[2]
-        print(self.fleet.robot_list[1])
-
-    def show_dino_opponent_options(self):
+    def robot_turn(self):
+        print("select a robot to attack with")
+        self.show_robot_options()
+        user_robot_choice = int(input())
+        self.fleet.robot_list[user_robot_choice].robot_attack(self.herd.dinosaurs_list[1])
         pass
 
-    def show_robot_opponent_options(self):
+    def show_dino_options(self):
+        pass
+
+    def show_robot_options(self):
+        count = 0
+        for robot in self.fleet.robot_list:
+            print(f'Press {count} to select {robot.name}')
+            count += 1
         pass
 
     def display_winners(self):
         pass
+
+
 
 
