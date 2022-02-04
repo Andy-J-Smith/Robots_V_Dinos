@@ -12,7 +12,8 @@ class Dinosaur:
 
     def dino_atk(self,robot):
         robot.health -= self.attack_power
-        print("Robot loses 1 health")
+        print(f'{robot.name} is being attacked by {self.name} for {self.attack_power} damage, leaving {robot.name} with {robot.health} health remaining')
+        
 
 
 
