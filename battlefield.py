@@ -1,12 +1,12 @@
-# adding logic to dino options just like we did robot options
-# add a print to robot_turn() that says "choose a dino to attack"
-# then call show_dino_options 
-# add an input 
-# replace the 1 in the index of the dino being passed in with the variable seupt for the input
-# now a user can pick the robot and the dino being attack! TEST IT
+# adding logic to dino options just like we did robot options DONE
+# add a print to robot_turn() that says "choose a dino to attack" DONE
+# then call show_dino_options  DONE
+# add an input DONE
+# replace the 1 in the index of the dino being passed in with the variable seupt for the input DONE
+# now a user can pick the robot and the dino being attack! TEST IT-----TURNS TESTED GOOD.
 # then you can do the same for dino turn
 # think about wehre its goin to make sense to check and see if an oppend health dropped to 0 and remove them from the list
-from select import select
+
 from fleet import Fleet
 from herd import Herd
 
@@ -20,6 +20,7 @@ class Battlefield:
 
     def run_game(self):
         self.display_welcome()
+        self.dino_turn()
         self.robot_turn() # replaced by battle after testing robo and dino turns
         self.display_winners()
         pass
@@ -40,16 +41,14 @@ class Battlefield:
         print ("Select a dinosaur to attack with ")
         self.show_dino_options()
         user_dino_choice = int(input())
-        user_robot_choice = int (input())
-        self.herd.dinosaurs_list[user_dino_choice].dino_atk(self.fleet.robot_list[user_robot_choice])
+        self.herd.dinosaurs_list[user_dino_choice].dino_atk(self.fleet.robot_list[1])
        
 
     def robot_turn(self):
         print("select a robot to attack with ")
         self.show_robot_options()
         user_robot_choice = int(input())
-        user_dino_choice = int(input())
-        self.fleet.robot_list[user_robot_choice].robot_attack(self.herd.dinosaurs_list[user_dino_choice])
+        self.fleet.robot_list[user_robot_choice].robot_attack(self.herd.dinosaurs_list[1])
         # if self.herd.dinosair_list[1].health <= 0:
            # self.herd.dinosaurs_list.remove(self.herd.dinosaurs_list[1])
         pass
@@ -59,7 +58,7 @@ class Battlefield:
         for dino in self.herd.dinosaurs_list:
             print(f'Press {count} to select {dino.name}')
             count += 1
-        pass
+        
 
     def show_robot_options(self):
         count = 0
