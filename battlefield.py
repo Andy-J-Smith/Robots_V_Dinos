@@ -20,9 +20,7 @@ class Battlefield:
 
     def run_game(self):
         self.display_welcome()
-        self.dino_turn()
-        self.robot_turn() # replaced by battle after testing robo and dino turns
-        self.display_winners()
+        self.battle()
         pass
         
 
@@ -32,9 +30,22 @@ class Battlefield:
         print("Who will win? The HERD or The FLEET")
         print("Lets Get it On!")
 
-    def battle(self): # make a while loop, while the length of both list is greater than 0: should loop over dino and robo turns over and over
-        pass
-        
+    def battle(self):
+        length = len(self.fleet.robot_list)
+        i = 0
+        while i < length:
+            self.robot_turn()
+            i += 1
+        length = len(self.herd.dinosaurs_list)
+        j = 0
+        while j < length:
+            self.dino_turn()
+            j += 1
+  
+
+                # make a while loop, while the length of both list is greater than 0: should loop over dino and robo turns over and over
+          #not callable
+      
             
         
     def dino_turn(self):
