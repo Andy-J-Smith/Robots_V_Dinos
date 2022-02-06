@@ -36,13 +36,16 @@ class Battlefield:
         while i < length:
             self.robot_turn()
             i += 1
-            
+               
+            continue                   # ONLY loops through list 1 time for a total of six turns. 
+                                                # iterates 3 times for robot then 3 times for dino
         length = len(self.herd.dinosaurs_list)
         j = 0
         while j < length:
-            self.dino_turn() # make a while loop, while the length of both list is greater than 0: should loop over dino and robo turns over and over
+            self.dino_turn()
             j += 1
-            
+        
+            continue
         
     def dino_turn(self):
         print ("Select a dinosaur to attack with ")
@@ -76,7 +79,12 @@ class Battlefield:
         pass
 
     def display_winners(self):
-        pass
+        if self.fleet.robot_list() <= 0:
+            print("")
+        else:
+            print()
+            
+
 
 
 
