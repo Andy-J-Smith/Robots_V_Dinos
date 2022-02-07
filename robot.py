@@ -8,7 +8,7 @@ class Robot:
 
     def __init__(self, name):
         self.name = name
-        self.health = 3
+        self.health = 5
         self.weapon = Weapon("Ray_Gun",1)
 
 

@@ -53,17 +53,18 @@ class Battlefield:
         self.show_dino_options()
         user_dino_choice = int(input())
         self.herd.dinosaurs_list[user_dino_choice].dino_atk(self.fleet.robot_list[1])
-        if self.fleet.robot_list.health <= 0:
-           self.fleet.robot_list.remove(self.fleet.robot_list)
+        # if self.fleet.robot_list.health <= 0:
+        #    self.fleet.robot_list.remove(self.fleet.robot_list)
+        pass
 
     def robot_turn(self):
         print("select a robot to attack with ")
         self.show_robot_options()
         user_robot_choice = int(input())
         self.fleet.robot_list[user_robot_choice].robot_attack(self.herd.dinosaurs_list[1])
-        if self.herd.dinosaurs_list.health <= 0:
-           self.herd.dinosaurs_list.remove(self.herd.dinosaurs_list)
-        
+        # if self.herd.dinosaurs_list.health <= 0:
+        #    self.herd.dinosaurs_list.remove(self.herd.dinosaurs_list)
+        pass
 
     def show_dino_options(self):
         count = 0
@@ -85,7 +86,7 @@ class Battlefield:
         else:
             print("Congratulations to The Robots")
             
-
+        pass
 
 
 
