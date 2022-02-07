@@ -21,6 +21,7 @@ class Battlefield:
     def run_game(self):
         self.display_welcome()
         self.battle()
+        self.display_winners()
         pass
         
 
@@ -52,16 +53,16 @@ class Battlefield:
         self.show_dino_options()
         user_dino_choice = int(input())
         self.herd.dinosaurs_list[user_dino_choice].dino_atk(self.fleet.robot_list[1])
-        if self.fleet.robot_list[1].health <= 0:
-           self.fleet.robot_list.remove(self.fleet.robot_list[1])
+        if self.fleet.robot_list.health <= 0:
+           self.fleet.robot_list.remove(self.fleet.robot_list)
 
     def robot_turn(self):
         print("select a robot to attack with ")
         self.show_robot_options()
         user_robot_choice = int(input())
         self.fleet.robot_list[user_robot_choice].robot_attack(self.herd.dinosaurs_list[1])
-        if self.herd.dinosaurs_list[1].health <= 0:
-           self.herd.dinosaurs_list.remove(self.herd.dinosaurs_list[1])
+        if self.herd.dinosaurs_list.health <= 0:
+           self.herd.dinosaurs_list.remove(self.herd.dinosaurs_list)
         
 
     def show_dino_options(self):
@@ -80,9 +81,9 @@ class Battlefield:
 
     def display_winners(self):
         if self.fleet.robot_list() <= 0:
-            print("")
+            print("Congratulations to The Dinosaurs")
         else:
-            print()
+            print("Congratulations to The Robots")
             
 
 

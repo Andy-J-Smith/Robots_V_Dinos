@@ -10,7 +10,7 @@ class Herd:
         
 
     def create_herd(self):
-        dino1 = Dinosaur("T-Rex",2)
+        dino1 = Dinosaur("T-Rex",1)
         self.dinosaurs_list.append(dino1)
         dino2 = Dinosaur("Raptor",1)
         self.dinosaurs_list.append(dino2)
